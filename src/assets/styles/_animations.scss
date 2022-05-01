@@ -1,0 +1,14 @@
+.absolute-fade-enter-active, .absolute-fade-leave-active {
+  position: absolute;
+  transition: opacity 300ms, transform 300ms;
+}
+.absolute-fade-enter, .absolute-fade-leave-to {
+  opacity: 0;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 100ms ease-in-out;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}

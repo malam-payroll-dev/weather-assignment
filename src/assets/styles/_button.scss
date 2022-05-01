@@ -1,0 +1,8 @@
+button {
+  @apply outline-none px-6 py-3 bg-white rounded text-xs font-bold uppercase tracking-wider
+    border border-blue-500 text-blue-500 transition-colors duration-200;
+
+  &:hover {
+    @apply bg-blue-500 text-white;
+  }
+}
