@@ -30,7 +30,7 @@
     </div>
 
     <footer class="p-4 dark:bg-gray-900 bg-gray-800 text-white flex items-center">
-      <span class="font-light text-xs">@obuhhh, 2022</span>
+      <span class="font-light text-xs">Malam Payroll, 2022</span>
       <UnitSwitcher class="ml-auto" />
       <ThemeSwitcher class="ml-12" />
     </footer>
