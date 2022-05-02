@@ -37,7 +37,7 @@ import { accuWeatherService } from '@/services'
 import { useWeatherStore } from '@/store'
 import { useDebounce } from '@/composables/useDebounce'
 import { IPlace } from '@/types'
-const { currentPlace } = useWeatherStore()
+const { currentPlace, clearFavorite } = useWeatherStore()
 
 const $emit = defineEmits(['selected'])
 
@@ -52,6 +52,9 @@ function onSelectPlace (place: IPlace) {
   query.value = place.LocalizedName
   inputRef.value?.blur()
   places.value = []
+
+  // Add BUG: clear favorites every time a place is selected again
+  clearFavorite(place)
 }
 
 function fetchPlaces () {

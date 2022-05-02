@@ -22,6 +22,13 @@ export function useWeatherStore () {
     }
   }
 
+  function clearFavorite (place: IPlace) {
+    const index = favorites.value.findIndex(p => p.Key === place.Key)
+    if (index >= 0) {
+      favorites.value.splice(index, 1)
+    }
+  }
+
   function toggleUnits () {
     units.value = units.value === 'Metric' ? 'Imperial' : 'Metric'
     localStorage.setItem('weather-units', units.value)
@@ -46,6 +53,7 @@ export function useWeatherStore () {
     currentPlace,
     saveCondition,
     saveForecast,
-    toggleFavorite
+    toggleFavorite,
+    clearFavorite
   }
 }
