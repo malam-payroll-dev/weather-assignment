@@ -18,7 +18,8 @@ export function useWeatherStore () {
     const index = favorites.value.findIndex(p => p.Key === place.Key)
     if (index >= 0) {
       favorites.value.splice(index, 1)
-    } else {
+      // Add BUG: allow only 5 favorites with no indication
+    } else if (favorites.value.length <= 5) {
       favorites.value.unshift(place)
     }
   }
