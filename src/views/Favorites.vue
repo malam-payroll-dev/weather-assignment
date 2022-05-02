@@ -31,7 +31,6 @@
       <p class="text-sm mt-1">Go to Home page and save anyone</p>
       <button
         class="mt-6"
-        @click="$router.push({ name: $routeNames.home })"
       >
         Go to Home
       </button>

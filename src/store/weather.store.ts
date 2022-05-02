@@ -6,7 +6,8 @@ const units = ref<TUnit>((localStorage.getItem('weather-units') as TUnit) || 'Me
 const favorites = ref<IPlace[]>([])
 const currentPlace = ref<IPlace | null>(null)
 const isCurrentsFavorite = computed<boolean>(() => {
-  return favorites.value.some(f => f.Key === currentPlace.value?.Key)
+  // Add BUG: check favorite by name instead of key
+  return favorites.value.some(f => f.LocalizedName === currentPlace.value?.LocalizedName)
 })
 
 const conditionsHash = ref<TIndexedObject<ICondition>>({})

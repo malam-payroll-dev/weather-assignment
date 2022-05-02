@@ -59,6 +59,12 @@ function onSelectPlace (place: IPlace) {
 
 function fetchPlaces () {
   loading.value = true
+
+  // Add BUG: if search query is longer than 8 characters request is not sent without any indication
+  if (query.value.length > 8) {
+    return
+  }
+
   return accuWeatherService.autocomplete(query.value)
     .then((res) => { places.value = res })
     .finally(() => { loading.value = false })
